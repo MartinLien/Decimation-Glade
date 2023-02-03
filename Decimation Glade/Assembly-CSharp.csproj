@@ -55,6 +55,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Rooms\Room.cs" />
+    <Compile Include="Assets\Scripts\Rooms\RoomTrigger.cs" />
+    <Compile Include="Assets\Scripts\Rooms\RoomManager.cs" />
+    <Compile Include="Assets\ScriptableObject\RoomList.cs" />
+    <Compile Include="Assets\Scripts\Rooms\RoomSplit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
