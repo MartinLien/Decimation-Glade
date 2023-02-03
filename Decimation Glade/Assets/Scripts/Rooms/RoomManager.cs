@@ -32,7 +32,6 @@ public class RoomManager : MonoBehaviour
     {
         Debug.Log("SpawnNextRoom");
 
-        TerminatePreviousRoom();
 
         int index = _nextRooms.IndexOf(room);
         if (index == 0)
@@ -43,6 +42,7 @@ public class RoomManager : MonoBehaviour
         else
             _offRoom = _nextRooms[0];
 
+        TerminatePreviousRoom();
         _currentRoom = room;
 
         _nextRooms.Clear();
@@ -81,6 +81,6 @@ public class RoomManager : MonoBehaviour
             Destroy(_currentRoom.gameObject);
 
         if (_offRoom != null)
-            Destroy(_offRoom);
+            Destroy(_offRoom.gameObject);
     }
 }
