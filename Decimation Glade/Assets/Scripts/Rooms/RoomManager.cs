@@ -7,6 +7,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private Room _starterRoom = null;
     [SerializeField] private RoomList _rooms = null;
     [SerializeField] private StringList _notes = null;
+    [SerializeField] private int _roomsBetweenNotes = 2;
 
     // Next room is a list because the path can split
     private List<Room> _nextRooms = new List<Room>();
@@ -35,6 +36,7 @@ public class RoomManager : MonoBehaviour
         _noteList = new List<string>(_notes.Variable);
 
         _currentRoom = _starterRoom;
+        _roomCount = _roomsBetweenNotes;
 
         Transform spawnPoint = _currentRoom.NextRoomAnchor;
         _nextRooms.Add(Instantiate(GetRandomRoom(), spawnPoint.position, spawnPoint.rotation));
@@ -56,8 +58,14 @@ public class RoomManager : MonoBehaviour
         TerminatePreviousRoom();
         _currentRoom = roomEntered;
 
-        // Spawn note when entering room because we don't know what direction the player is going to go during a split
-        roomEntered.SpawnNote(GetRandomNote());
+        ++_roomCount;
+        if (_roomCount >= _roomsBetweenNotes)
+        {
+            _roomCount = 0;
+
+            // Spawn note when entering room because we don't know what direction the player is going to go during a split
+            roomEntered.SpawnNote(GetRandomNote());
+        }
 
         _nextRooms.Clear();
 

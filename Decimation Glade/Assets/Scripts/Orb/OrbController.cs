@@ -26,28 +26,33 @@ public class OrbController : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (isOrbInHand)
-        {
-            if (CastSpell)
-            {
+        //if (isOrbInHand)
+        //{
+        //    if (CastSpell)
+        //    {
                 
-                OrbToHand = false;
-                GetComponent<Rigidbody>().useGravity = true;
-                isOrbInHand = false;
-                GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ThrowForce);
+        //        OrbToHand = false;
+        //        GetComponent<Rigidbody>().useGravity = true;
+        //        isOrbInHand = false;
+        //        GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ThrowForce);
 
-               StartCoroutine(delayCallBack());
+        //       StartCoroutine(delayCallBack());
                
-            }
+        //    }
 
-        }
+        //}
 
-        if (OrbToHand)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, RightHand.position, Time.deltaTime * CallBackSpeed);
-            GetComponent<Rigidbody>().useGravity = false;
+        //if (OrbToHand)
+        //{
+        //    transform.position = Vector3.MoveTowards(transform.position, RightHand.position, Time.deltaTime * CallBackSpeed);
+        //    GetComponent<Rigidbody>().useGravity = false;
 
-        }
+        //    if (Vector3.Distance(transform.position, RightHand.position) < 0.05f)
+        //    {
+        //        CastSpell = false;
+        //        isOrbInHand = true;
+        //    }
+        //}
     }
 
     void Update ()
@@ -57,6 +62,34 @@ public class OrbController : MonoBehaviour
             
             StartCoroutine(delayAnimationPlaying());
             
+        }
+
+        if (isOrbInHand)
+        {
+            if (CastSpell)
+            {
+
+                OrbToHand = false;
+                GetComponent<Rigidbody>().useGravity = true;
+                isOrbInHand = false;
+                GetComponent<Rigidbody>().AddForce(playerCamera.transform.forward * ThrowForce);
+
+                StartCoroutine(delayCallBack());
+
+            }
+
+        }
+
+        if (OrbToHand)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, RightHand.position, Time.deltaTime * CallBackSpeed);
+            GetComponent<Rigidbody>().useGravity = false;
+
+            if (Vector3.Distance(transform.position, RightHand.position) < 0.05f)
+            {
+                CastSpell = false;
+                isOrbInHand = true;
+            }
         }
     }
 
