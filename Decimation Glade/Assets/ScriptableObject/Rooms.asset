@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Rooms
   m_EditorClassIdentifier: 
   _variable:
-  - {fileID: 8406037868855464014, guid: f0aef7fed2fc54a4f98a1683853c3b95, type: 3}
-  - {fileID: 4913921395642976714, guid: 41a313271a59cdf4085a6236befea4f7, type: 3}
-  - {fileID: 957955012467480482, guid: 4b5a08fa94f690b4e8dea3334eeb1187, type: 3}
+  - {fileID: 6174934873842938038, guid: 26361b2bdcd482140883c278412c830b, type: 3}
+  - {fileID: 6672175842325963195, guid: edeeec3335d660148a6a418e24753361, type: 3}
+  - {fileID: 1014529846917865260, guid: dd249b42178376945960056c5a148c3d, type: 3}

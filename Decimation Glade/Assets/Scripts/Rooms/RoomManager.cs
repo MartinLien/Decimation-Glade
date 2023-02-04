@@ -4,22 +4,36 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    private List<Room> _nextRooms = new List<Room>();
-
     [SerializeField] private Room _starterRoom = null;
     [SerializeField] private RoomList _rooms = null;
+    [SerializeField] private StringList _notes = null;
 
-    //private Room _nextRoom = null;
+    // Next room is a list because the path can split
+    private List<Room> _nextRooms = new List<Room>();
+    private List<string> _noteList = new List<string>();
+
     private Room _currentRoom = null;
-    private Room _offRoom = null;
+    private Room _otherPath = null;
+
+    private int _roomCount = 0;
 
     private Room GetRandomRoom()
     {
         return _rooms.Variable[Random.Range(0, _rooms.Variable.Count)];
     }
 
+    private string GetRandomNote()
+    {
+        int rand = Random.Range(0, _noteList.Count);
+        string note = _noteList[rand];
+        _noteList.RemoveAt(rand);
+        return note;
+    }
+
     private void Start()
     {
+        _noteList = new List<string>(_notes.Variable);
+
         _currentRoom = _starterRoom;
 
         Transform spawnPoint = _currentRoom.NextRoomAnchor;
@@ -28,22 +42,22 @@ public class RoomManager : MonoBehaviour
         _nextRooms[0].OnEnteringRoom += SpawnNextRoom;
     }
 
-    private void SpawnNextRoom(Room room)
+    private void SpawnNextRoom(Room roomEntered)
     {
-        Debug.Log("SpawnNextRoom");
-
-
-        int index = _nextRooms.IndexOf(room);
+        int index = _nextRooms.IndexOf(roomEntered);
         if (index == 0)
         {
             if (_nextRooms.Count > 1)
-                _offRoom = _nextRooms[1];   
+                _otherPath = _nextRooms[1];   
         }
         else
-            _offRoom = _nextRooms[0];
+            _otherPath = _nextRooms[0];
 
         TerminatePreviousRoom();
-        _currentRoom = room;
+        _currentRoom = roomEntered;
+
+        // Spawn note when entering room because we don't know what direction the player is going to go during a split
+        roomEntered.SpawnNote(GetRandomNote());
 
         _nextRooms.Clear();
 
@@ -66,8 +80,13 @@ public class RoomManager : MonoBehaviour
         foreach (var r in _nextRooms)
         {
             r.OnEnteringRoom += SpawnNextRoom;
-            //room.OnExitingRoom += SetNextCurrentRoom;
+            r.OnExitingRoom += TriggerExitEvent;
         }
+    }
+
+    private void TriggerExitEvent(Room room)
+    {
+
     }
 
     private void SetNextCurrentRoom(Room room)
@@ -80,7 +99,7 @@ public class RoomManager : MonoBehaviour
         if (_currentRoom != null)
             Destroy(_currentRoom.gameObject);
 
-        if (_offRoom != null)
-            Destroy(_offRoom.gameObject);
+        if (_otherPath != null)
+            Destroy(_otherPath.gameObject);
     }
 }
