@@ -162,15 +162,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I filled my waterskin two days ago, such did I record in my memoirs! Yet
-    my mouth is dry as ash and there\u2019s but a drop of water left. I cannot recall
-    drinking, nor can I recall spilling like a fool. Could this damnable maze have
-    clouded my mind to forget such an error? Nay! For even in my most drunken state
-    I never forget my duty as a writer!\r\n\r\nCould it be that even with man\u2019s
-    intellect and magic at my disposal, I am still at the mercy of this wretched
-    tree? That my body is treated like a drop of dew, of which the tree soaks in
-    to sustain itself and grow? If so, I am truly the butt of the cruelest joke.
-    This is my punishment for wasting too much paper.\r\n"
+  m_text: "I dreamt I dug through the roof of these caves with my bare fingers. My
+    hands were gored and broken as I clawed my way through the dry earth, only to
+    emerge to a blood-red wasteland. The trees of the forest have turned to splinters,
+    and the mountains in the far ranges to gravel. The oceans were pitch-black, rotten
+    fish bloating the surface, cushioning the fall of seagull carcasses raining down
+    through ash clouds. The world had turned to a husk so dead, that not even fire
+    could kindle.  I journeyed this dead world, its never-ending desolate fields
+    and blackened oceans. My stomach twisted from starvation and my tongue cracked
+    from lack of water, yet I did not die. And every time I thought I\u2019d ventured
+    far enough, I\u2019d turn around and see that cursed tree, no further away than
+    it had been before my journey. Part of me wished desperately that it was mocking
+    me, and keeping me as its plaything. Part of me wished that there was a semblance
+    of purpose in this torture. Yet deep inside, I knew the truth. There was no method
+    to the madness, and my suffering was pointless.  As I write my recollections,
+    a new thought appears. Maybe this was no dream. Rather, a premonition. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -197,11 +203,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.035
+  m_fontSize: 0.034
   m_fontSizeBase: 0.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0.035
+  m_fontSizeMin: 0.034
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1

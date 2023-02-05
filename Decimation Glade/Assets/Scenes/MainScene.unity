@@ -317,9 +317,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -835,10 +835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1252,7 +1252,7 @@ PrefabInstance:
     - target: {fileID: -4384413386019456427, guid: 1444f8ff1dd6f154180c61e943a0a3a2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5e3a8d7871130cc4fb88df15c7a39735, type: 2}
+      objectReference: {fileID: 2100000, guid: 6ddb0e73ca5a9bf43a2a5ed0c1cc56c4, type: 2}
     - target: {fileID: 919132149155446097, guid: 1444f8ff1dd6f154180c61e943a0a3a2, type: 3}
       propertyPath: m_Name
       value: Sword_idle
@@ -1933,6 +1933,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1690181060323687623, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.73
+      objectReference: {fileID: 0}
     - target: {fileID: 5361827450715174316, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1975,7 +1979,11 @@ PrefabInstance:
       objectReference: {fileID: 1823051278}
     - target: {fileID: 5361827451271359409, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1031
+      value: 1094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361827451345955030, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.08
       objectReference: {fileID: 0}
     - target: {fileID: 5361827451345955031, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_Layer
@@ -1999,7 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 2057920489}
     - target: {fileID: 5361827451358893799, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1034
+      value: 1097
       objectReference: {fileID: 0}
     - target: {fileID: 5361827451464693175, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_Layer
@@ -2023,7 +2031,11 @@ PrefabInstance:
       objectReference: {fileID: 1830292623}
     - target: {fileID: 5361827451675311670, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_VersionIndex
-      value: 242
+      value: 305
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361827451675311673, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 5361827452044255234, guid: e47b280f1d5419f4e9bf2b9c2c5c062d, type: 3}
       propertyPath: m_RootOrder
@@ -2147,13 +2159,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 1128703857}
   _soundEffects:
-  - {fileID: 8300000, guid: a6cf0a8053826c44ea50f631fbcb12f2, type: 3}
-  - {fileID: 8300000, guid: 7d9c63a36792c21418befccabe1ce59b, type: 3}
   - {fileID: 8300000, guid: 869e7fc40e4c83941a150ea2925dc2b8, type: 3}
   - {fileID: 8300000, guid: 356495b0747a34242999bb34b622e252, type: 3}
   - {fileID: 8300000, guid: 0eeb621d2e452c34091e2c015f8bf46f, type: 3}
   - {fileID: 8300000, guid: e90238cfea3cfce43953e8e07e635454, type: 3}
-  _timeBetweenSounds: 6
+  - {fileID: 8300000, guid: 77a59af91dbe91f41b77a8bc9a39366c, type: 3}
+  - {fileID: 8300000, guid: 175f3dbea190bca49b53e60463ab63e9, type: 3}
+  - {fileID: 8300000, guid: df508142499e3e64aa47306fb24cc360, type: 3}
+  - {fileID: 8300000, guid: 1275b2324438a574b8a0a87e840ceb9d, type: 3}
+  - {fileID: 8300000, guid: 3a3ca6c361482454e991a740556a3c11, type: 3}
+  _timeBetweenSounds: 10
 --- !u!4 &1128703856
 Transform:
   m_ObjectHideFlags: 0
@@ -2472,9 +2487,9 @@ RectTransform:
   m_Father: {fileID: 317659717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -645}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 700, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299933829
@@ -2576,8 +2591,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2835,7 +2850,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1260
+  m_Name: pb_Mesh-2531328
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2999,7 +3014,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1210
+  m_Name: pb_Mesh-2530812
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3424,7 +3439,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1244
+  m_Name: pb_Mesh-2531312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
