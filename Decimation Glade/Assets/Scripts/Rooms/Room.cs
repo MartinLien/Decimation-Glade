@@ -10,6 +10,7 @@ public class Room : MonoBehaviour
     [SerializeField] private Transform _nextRoomAnchor = null;
 
     [SerializeField] protected GameObject _blockage = null;
+    [SerializeField] private bool _blockerEnabledAtSpawn = false;
 
     [SerializeField] protected Note _note = null;
 
@@ -30,7 +31,7 @@ public class Room : MonoBehaviour
 
     private void Start()
     {
-        _blockage.SetActive(false);
+        _blockage.SetActive(_blockerEnabledAtSpawn);
 
         _enterTrigger.OnTrigger += EnterRoom;
         _exitTrigger.OnTrigger += ExitRoom;

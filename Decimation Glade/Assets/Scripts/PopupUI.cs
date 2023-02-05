@@ -8,13 +8,22 @@ public class PopupUI : MonoBehaviour
     [SerializeField] private CanvasGroup _canvasGroup = null;
     [SerializeField] private AnimationCurve _animationCurve = null;
     [SerializeField] private float _duration = 0.5f;
+    [SerializeField] private bool _fadeOutOnStart = false;
 
     private bool _toggled = false;
     private Coroutine _coroutine = null;
 
     private void Start()
     {
-        _canvasGroup.alpha = 0;
+        if (_fadeOutOnStart)
+        {
+            _canvasGroup.alpha = 1;
+            _coroutine = StartCoroutine(Toggle(false));
+        }
+        else
+        {
+            _canvasGroup.alpha = 0;
+        }
     }
 
     public void SetText(string text)
